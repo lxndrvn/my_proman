@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 id="boards-title">MY BOARDS</h1>
+                <ul id="board-list">
+                    <li>
+                        <a data-toggle="modal" data-target="#add-new-board" href="">
+                            <div class="board" id="new-board">
+                                Add new board
+                            </div>
+                        </a>
+                    </li>
+                    {% for board in boards %}
+                        <li>
+                            <div class="board">
+                                <button type="button" class="btn btn-default remove-board"
+                                        onclick="deleteBoard( {{ board.id }})">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button>
+                                <h4>{{ board.title }}</h4>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="add-new-board" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">New board</h4>
+                </div>
+                <div class="modal-body">
+                    Title: <input type="text" id="add-title" onkeypress="handle(event)"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="new-board-button" onclick="addNewBoard()"
+                            data-dismiss="modal">Save
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}
