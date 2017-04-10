@@ -1,0 +1,42 @@
+body {
+    background: dimgrey;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#boards-title {
+    font-size: 200%;
+    color: white;
+}
+
+div.board {
+    background: cornflowerblue;
+    border-radius: 15px;
+    color: white;
+    float: left;
+    height: 70px;
+    margin: 10px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    width: 200px;
+
+}
+
+#new-board {
+    background-color: lightgrey;
+    color: dimgrey;
+    line-height: 70px;
+    padding: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button.remove-board, button.remove-board:active, button.remove-board:focus, button.remove-board:hover {
+    background: transparent;
+    border: none;
+    font-size: 80%;
+    float: right;
+    padding: 3px;
+}
